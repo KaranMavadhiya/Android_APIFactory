@@ -31,8 +31,8 @@ public class OkHttpSynchronousUtils {
 
     /**
      * build.gradle dependencies
-     * compile 'com.squareup.okhttp3:okhttp:3.8.1'
-     * compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+     * compile 'com.squareup.okhttp3:okhttp:3.9.1'
+     * compile 'com.squareup.okhttp3:logging-interceptor:3.9.1'
      */
 
     private static String TAG = OkHttpSynchronousUtils.class.getSimpleName();
