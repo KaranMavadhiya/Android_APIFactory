@@ -8,9 +8,6 @@ The OkHttp library actually provides an implementation of the HttpUrlConnection 
 
 In addition, OkHttp v2.4 also provides a more updated way of managing URLs internally. Instead of the java.net.URL, java.net.URI, or android.net.Uri classes, it provides a new HttpUrl class that makes it easier to get an HTTP port, parse URLs, and canonicalizing URL strings.
 
-## Document
-https://github.com/KaranMavadhiya/Android_APIFactory/blob/master/document/index.html
-
 #### License
 
 ~~~~
