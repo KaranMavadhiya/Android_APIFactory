@@ -8,6 +8,38 @@ The OkHttp library actually provides an implementation of the HttpUrlConnection 
 
 In addition, OkHttp v2.4 also provides a more updated way of managing URLs internally. Instead of the java.net.URL, java.net.URI, or android.net.Uri classes, it provides a new HttpUrl class that makes it easier to get an HTTP port, parse URLs, and canonicalizing URL strings.
 
+
+
+## Synchronous Network Calls
+
+We can create a Call object and dispatch the network request synchronously:
+~~~
+WSResponse wsResponse = OkHttpSynchronousUtils.callSynchronousHttpPost("CONTEXT", "URL","RequestBody");
+~~~
+![](http://res.cloudinary.com/reyinfotech/image/upload/c_scale,q_auto:best,r_0,w_802/a_0/v1516696861/APIFactory/Screen_Shot_2018-01-23_at_2.08.48_PM.png)
+
+Because Android disallows network calls on the main thread, you can only make synchronous calls if you do so on a separate thread or a background service. You can use also use AsyncTask for lightweight network calls.
+
+## Asynchronous Network Calls
+We can also make asynchronous network calls too by creating a Call object, using the enqueue() method, and passing an anonymous Callback object that implements WSResponse for onRequestSuccess onRequestFailure and onNetworkFailure
+~~~
+OkHttpAsynchronousUtils.callAsynchronousHttpPost("CONTEXT", "URL","RequestBody", new WSCallBack() {
+      @Override
+      public void onRequestSuccess(WSResponse wsResponse) {
+
+      }
+      @Override
+      public void onRequestFailure(int statusCode, String message) {
+
+      }
+      @Override
+      public void onNetworkFailure(int statusCode, String message) {
+
+      }
+   });
+~~~
+![](http://res.cloudinary.com/reyinfotech/image/upload/c_scale,q_100,w_802/v1516697608/APIFactory/Screen_Shot_2018-01-23_at_2.22.55_PM.png)
+
 #### License
 
 ~~~~
