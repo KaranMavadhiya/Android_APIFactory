@@ -1,11 +1,11 @@
-package com.apifactory.okhttp;
+package com.apifectory.okhttp;
 
 public class WSResponse {
 
 
     private int statusCode;
     private String message;
-    private String data;
+    private String response;
 
     public int getStatusCode() {
         return statusCode;
@@ -23,11 +23,11 @@ public class WSResponse {
         this.message = message;
     }
 
-    public String getData() {
-        return data;
+    public String getResponse() {
+        return response;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setResponse(String response) {
+        this.response = response;
     }
 }

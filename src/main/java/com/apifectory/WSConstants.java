@@ -1,4 +1,4 @@
-package com.apifactory;
+package com.apifectory;
 
 
 public class WSConstants {
@@ -14,7 +14,7 @@ public class WSConstants {
 
 
     public static String server_error_message = "Something is wrong, Please try after sometime.";
-    public static String network_error_message = "There is no network connection \n at the moment.Try again later";
+    public static String network_error_message = "There is no network connection at the moment, Please try again.";
     public static String time_out_error_message = "Sorry!!! Connection time out, please try again.";
     public static String bed_request_error_message = "The request could not be understood by the server due to malformed syntax, Please contact to admin.";
 
