@@ -41,8 +41,47 @@ requestBody.addFormDataPart("KEY", "VALUE");
 requestBody.addFormDataPart("IMAGE_KEY", "IMAGE_NAME", RequestBody.create(MEDIA_TYPE,  new File("FILE_PATH")));
 ~~~
 
-#### License
+## Retrofit 2 HTTP 
+Retrofit is a type-safe HTTP client for Android and Java. Retrofit makes it easy to connect to a REST web service by translating the API into Java interfaces.In this tutorial, I'll show you how to call API using this library.  
 
+Step 1: Import this library project into your project.
+
+Step 2: Declare Host Url into gradle.properties.
+~~~
+HOST_URL="API_HOST_URL"
+~~~
+Step 3: Create APIService interface where you declare all the methods.
+~~~
+public interface APIService {
+ @GET("users/{user}/profile")
+ Call<User> getUserDetail(@Path("user") String userId);
+}
+~~~
+Step 4: Get instance of Retrofit.
+~~~
+APIService service = RetroFitFactory.getInstance(this).getService(APIService.class);
+~~~
+Step 5: call API.
+~~~
+Call<User> call = service.getUserDetail("USER_ID");
+call.enqueue(new Callback<CategoryResponse>() {
+   @Override
+   public void onResponse(Call<User> call, Response<User> response) {
+         
+   }
+   @Override
+   public void onFailure(Call<User> call, Throwable t) {
+               
+   }
+});
+~~~
+
+## Reference
+http://square.github.io/retrofit/
+
+
+
+#### License
 ~~~~
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
